@@ -131,10 +131,11 @@ while count == 0:
                         break
             break
     break
-slow_print("You walk into a large cavern that contains three doors, with one presumably leading to the Crystal.")
-slow_print("The sign by the first door says:\n")
-slow_print("The sign by the second door says:\n")
-slow_print("The sign by the third door says:\n")
+slow_print("You walk into a large cavern that contains three doors, with large letters above them.")
+slow_print("The lettering above the doors reads:\nThe Crystal is behind one of these three doors, and you must decide which of them is lying to you, and which are telling the truth(if any)")
+slow_print("The sign by the first door says:\nDoor two is telling the truth.")
+slow_print("The sign by the second door says:\nI have the Crystal.")
+slow_print("The sign by the third door says:\nBoth of them are telling the truth. Also, door one has the reward in their chest.")
 door_choice = int(input("What door do you think houses the Crystal? (1), (2), or (3)?"))            
 if door_choice == 1:
     slow_print("You open the first door and walk inside, only for the door to slam shut and the walls to start closing in, crushing you.\nGame Over")
