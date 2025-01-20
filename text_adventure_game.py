@@ -138,6 +138,11 @@ slow_print("The sign by the third door says:\n")
 door_choice = int(input("What door do you think houses the Crystal? (1), (2), or (3)?"))            
 if door_choice == 1:
     slow_print("You open the first door and walk inside, only for the door to slam shut and the walls to start closing in, crushing you.\nGame Over")
+    exit()
+if door_choice == 2:
     slow_print("You open the second door and are greeted by a raging inferno, that spreads quickly, roasting you to a crisp.\nGame Over")
+    exit()
+if door_choice == 3:
     slow_print("You open the third door and are blinded by the light of the Nexus Crystal!\nYou have saved the world from a dark future, all thanks to your wit and survival instincts.\nGood Game, and thanks for playing!")
+    exit()
 
