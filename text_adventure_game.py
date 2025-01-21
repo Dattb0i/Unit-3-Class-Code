@@ -1,3 +1,8 @@
+'''
+Name: August Doe
+Date: 1/20/25
+Description: Text Adventure Game
+'''
 import random
 import time
 score = 0   
@@ -45,7 +50,7 @@ def chest_opening():
             slow_print("You try to run forward, but the gas has spread too fast and you die from the fumes.\nGame Over")
             exit()
 # Main story
-slow_print("The world is in a crisis, the sun is growing weaker and weaker whilst energy is becoming harder and harder to come by.")
+slow_print("The world is in a crisis, the sun is growing weaker and energy is becoming harder to come by.")
 slow_print("Energy is going to run out worldwide in a few days.")
 slow_print(f"You, {input("Enter your name: ")}, have been set the task of retrieving the fabled Nexus Crystal, an energy source that would flood the world with plenty of energy once again.")
 slow_print("In legend, the Nexus Crystal resided in a desolate cave far from civilization, at the deepest point.")
@@ -131,19 +136,29 @@ while count == 0:
                         break
             break
     break
-slow_print("You walk into a large cavern that contains three doors, with large letters above them.")
-slow_print("The lettering above the doors reads:\nThe Crystal is behind one of these three doors, and you must decide which of them is lying to you, and which are telling the truth(if any)")
-slow_print("The sign by the first door says:\nDoor two is telling the truth.")
-slow_print("The sign by the second door says:\nI have the Crystal.")
-slow_print("The sign by the third door says:\nBoth of them are telling the truth. Also, door one has the reward in their chest.")
+slow_print("You walk into a large cavern that contains three doors, with large words above them.")
+slow_print("The lettering above the doors reads:\nThe Crystal is behind one of these three doors, and you must decide which of them is lying to you, and which are telling the truth(if any).")
+ready = int(input("Type '1' when ready to start."))
+while True:
+    if ready == 1:
+        slow_print("The sign by the first door reads:\nDoor two is telling the truth.")
+        ready2 = int(input("Type '1' when ready to move on."))
+        if ready2 == 1:
+            slow_print("The sign by the second door reads:\nI have the Crystal.")
+            ready3 = int(input("Type '1' when ready to move on"))
+            if ready3 == 1:
+                slow_print("The sign by the third door reads:\nBoth doors are telling the truth. Also, door one has the Crystal behind its door.")
+                readyfr = int(input("Type '1' when ready to answer."))
+                if readyfr == 1:
+                    break
 door_choice = int(input("What door do you think houses the Crystal? (1), (2), or (3)?"))            
 if door_choice == 1:
     slow_print("You open the first door and walk inside, only for the door to slam shut and the walls to start closing in, crushing you.\nGame Over")
     exit()
 if door_choice == 2:
-    slow_print("You open the second door and are greeted by a raging inferno, that spreads quickly, roasting you to a crisp.\nGame Over")
+    slow_print("You open the second door and are greeted by a raging inferno that spreads quickly, roasting you to a crisp.\nGame Over")
     exit()
 if door_choice == 3:
-    slow_print("You open the third door and are blinded by the light of the Nexus Crystal!\nYou have saved the world from a dark future, all thanks to your wit and survival instincts.\nGood Game, and thanks for playing!")
+    slow_print("You open the third door and are blinded by the light of the Nexus Crystal!\nYou have saved the world from a dark future, all thanks to your wit and survival instincts.\nGood game, and thanks for playing!")
     exit()
 
