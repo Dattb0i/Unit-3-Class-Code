@@ -5,11 +5,11 @@ Description: Text Adventure Game
 '''
 import random
 import time
-score = 0   
-super_shroom = 0 
+score = 0    
 count = 0
+super_shroom_count = 0
 #These lines make the code slowly type itself out
-def slow_print(text, delay=0.05):
+def slow_print(text, delay=0.001):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -26,13 +26,14 @@ title_art = r'''   ___                     ___               _ _
 '''
 #shroom random generator
 def rando_shroom():
+    super_shroom_count = 0
     shroom_safeness = random.randint(1,3)
     if shroom_safeness > 1:
         slow_print("You picked a poisonous mushroom that paralyzes you, good luck getting out now!\n Game Over")
         exit()
     if shroom_safeness == 1:
         slow_print("You picked a non-deadly mushroom that may be handy later on.")
-        super_shroom += 1
+        super_shroom_count += 1
 #chest opening scene
 def chest_opening():
     slow_print("You open the chest, and toxic gas fumes spill out of it.")
@@ -65,7 +66,6 @@ while True:
         break
     if game_start == 2:
         exit()
-print()
 print()
 slow_print("As you approach the cave entrance, you take a deep breath, preparing yourself for whatever lies ahead.")
 slow_print("You take a few steps inside, turn on your flashlight, and see that there are two pathways you could take.\nRight(1) or left(2)?")
@@ -102,6 +102,7 @@ while count == 0:
                         break
                     if shroom == 1:
                         rando_shroom()
+                        super_shroom_count += 1
                         break
             break
     count += 1
@@ -110,7 +111,7 @@ while count == 0:
         chance_to_get_hit = random.randint(1,80)
         if chance_to_get_hit == 34:
             slow_print("You take off your helmet to scratch your head, and a stalactite falls on you.\nGame Over")
-            exit()
+            
         slow_print("You look around and see that the cave stretches onward for a while, with a large dropoff on your right.\nDo you go forward(1) or look over the dropoff(2)?")
         while True:
             try:
@@ -148,6 +149,8 @@ while True:
             ready3 = int(input("Type '1' when ready to move on"))
             if ready3 == 1:
                 slow_print("The sign by the third door reads:\nBoth doors are telling the truth. Also, door one has the Crystal behind its door.")
+                if super_shroom_count == 1:
+                    slow_print("You have a super shroom! It's allowed you to tell that door two is lying.")
                 readyfr = int(input("Type '1' when ready to answer."))
                 if readyfr == 1:
                     break
@@ -161,4 +164,3 @@ if door_choice == 2:
 if door_choice == 3:
     slow_print("You open the third door and are blinded by the light of the Nexus Crystal!\nYou have saved the world from a dark future, all thanks to your wit and survival instincts.\nGood game, and thanks for playing!")
     exit()
-
