@@ -6,7 +6,7 @@ Description: Text Adventure Game
 import random
 import time
 #These lines make the code slowly type itself out
-def slow_print(text, delay=0.001):
+def slow_print(text, delay=0.03):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
