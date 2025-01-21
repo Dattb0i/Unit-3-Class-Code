@@ -9,7 +9,7 @@ score = 0
 super_shroom = 0 
 count = 0
 #These lines make the code slowly type itself out
-def slow_print(text, delay=0.001):
+def slow_print(text, delay=0.05):
     for char in text:
         print(char, end='', flush=True)
         time.sleep(delay)
