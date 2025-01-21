@@ -51,7 +51,7 @@ def chest_opening():
             exit()
 # Main story
 slow_print("The world is in a crisis, the sun is growing weaker and energy is becoming harder to come by.")
-slow_print("Energy is going to run out worldwide in a few days.")
+slow_print("Energy will run out worldwide in a few days, so you must move fast.")
 slow_print(f"You, {input("Enter your name: ")}, have been set the task of retrieving the fabled Nexus Crystal, an energy source that would flood the world with plenty of energy once again.")
 slow_print("In legend, the Nexus Crystal resided in a desolate cave far from civilization, at the deepest point.")
 slow_print("You must journey to this cave and find the crystal before the world goes dark forever.")
