@@ -3,6 +3,7 @@ Name: August Doe
 Date: 1/20/25
 Description: Text Adventure Game
 '''
+#ADD SCORING SYSTEM BEFORE MIDNIGHT TOMORROW
 import random
 import time
 #These lines make the code slowly type itself out
@@ -63,6 +64,22 @@ def chest_opening():
         if chest_decision == 2:
             slow_print("You try to run forward, but the gas has spread too fast and you die from the fumes.\nGame Over")
             game_restart()
+#The final room
+def endgame():
+    while True:
+        try:
+            door_choice = int(input("What door do you think houses the Crystal? (1), (2), or (3)?"))
+        except ValueError:
+            print("Enter either (1) (2) or (3)")            
+        if door_choice == 1:
+            slow_print("You open the first door and walk inside, only for the door to slam shut and the walls to start closing in, crushing you.\nGame Over")
+            game_restart()
+        if door_choice == 2:
+            slow_print("You open the second door and are greeted by a raging inferno that spreads quickly, roasting you to a crisp.\nGame Over")
+            game_restart()
+        if door_choice == 3:
+            slow_print("You open the third door and are blinded by the light of the Nexus Crystal!\nYou have saved the world from a dark future, all thanks to your wit and survival instincts.\nGood game, and thanks for playing!")
+            game_restart()
 #full game
 def game():
     count = 0
@@ -105,6 +122,12 @@ def game():
                             rando_shroom()
                             super_shroom_count += 1
                             break
+                        else:
+                            print("Invalid input, type in either: (1) or (2)")
+                            continue
+                else:
+                    print("Invalid input, type in either: (1) or (2)")
+                    continue
                 break
         count += 1
         if way == 2:
@@ -136,7 +159,16 @@ def game():
                         if chest == 1:
                             chest_opening()
                             break
+                        else:
+                            print("Invalid input, type in either: (1) or (2)")
+                            continue
+                else:
+                    print("Invalid input, type in either: (1) or (2)")
+                    continue
                 break
+        else:  
+            print("Invalid input, type in either: (1) or (2)")
+            continue         
         break
     slow_print("You walk into a large cavern that contains three doors, with large words above them.")
     slow_print("The lettering above the doors reads:\nThe Crystal is behind one of these three doors, and you must decide which of them is lying to you, and which are telling the truth(if any).")
@@ -155,20 +187,13 @@ def game():
                     readyfr = int(input("Type '1' when ready to answer."))
                     if readyfr == 1:
                         break
-    door_choice = int(input("What door do you think houses the Crystal? (1), (2), or (3)?"))            
-    if door_choice == 1:
-        slow_print("You open the first door and walk inside, only for the door to slam shut and the walls to start closing in, crushing you.\nGame Over")
-        game_restart()
-    if door_choice == 2:
-        slow_print("You open the second door and are greeted by a raging inferno that spreads quickly, roasting you to a crisp.\nGame Over")
-        game_restart()
-    if door_choice == 3:
-        slow_print("You open the third door and are blinded by the light of the Nexus Crystal!\nYou have saved the world from a dark future, all thanks to your wit and survival instincts.\nGood game, and thanks for playing!")
-        game_restart()
+    endgame()
 #Starting input
 while True:
     game_start = int(input("Ready to play?\nyes(1) no(2)"))
     if game_start == 1:
         game()
     if game_start == 2:
-        exit()
+        exit() 
+
+
