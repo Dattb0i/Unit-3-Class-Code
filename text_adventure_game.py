@@ -179,7 +179,7 @@ def game():
             ready2 = int(input("Type '1' when ready to move on."))
             if ready2 == 1:
                 slow_print("The sign by the second door reads:\nI have the Crystal.")
-                ready3 = int(input("Type '1' when ready to move on"))
+                ready3 = int(input("Type '1' when ready to move on."))
                 if ready3 == 1:
                     slow_print("The sign by the third door reads:\nBoth doors are telling the truth. Also, door one has the Crystal behind its door.")
                     if super_shroom_count == 1:
